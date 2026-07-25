@@ -1,0 +1,162 @@
+[
+  {
+    "id": "1",
+    "name": "Lightstick V2",
+    "description": "Official Nachimbong version 2.",
+    "category": "Lightsticks",
+    "img": "/ls2.jpg",
+    "price": 55.0
+  },
+  {
+    "id": "2",
+    "name": "Lightstick V1",
+    "description": "Official Nachimbong version 1.",
+    "category": "Lightsticks",
+    "img": "/ls1.jpg",
+    "price": 45.0
+  },
+  {
+    "id": "3",
+    "name": "Wolf Chan Plush",
+    "description": "Standard size SKZOO plushie.",
+    "category": "Accessories",
+    "img": "/wolf.jpg",
+    "price": 32.0
+  },
+  {
+    "id": "4",
+    "name": "Leebit Plush",
+    "description": "Standard size SKZOO plushie.",
+    "category": "Accessories",
+    "img": "/leebit.png",
+    "price": 32.0
+  },
+  {
+    "id": "5",
+    "name": "Dwaekki Plush",
+    "description": "Standard size SKZOO plushie.",
+    "category": "Accessories",
+    "img": "/dw.jpg",
+    "price": 32.0
+  },
+  {
+    "id": "6",
+    "name": "Jiniret Plush",
+    "description": "Standard size SKZOO plushie.",
+    "category": "Accessories",
+    "img": "/jini.jpg",
+    "price": 32.0
+  },
+  {
+    "id": "7",
+    "name": "Han Quokka Plush",
+    "description": "Standard size SKZOO plushie.",
+    "category": "Accessories",
+    "img": "/quokka.png",
+    "price": 32.0
+  },
+  {
+    "id": "8",
+    "name": "BbokAri Plush",
+    "description": "Standard size SKZOO plushie.",
+    "category": "Accessories",
+    "img": "/bb.png",
+    "price": 32.0
+  },
+  {
+    "id": "9",
+    "name": "PuppyM Plush",
+    "description": "Standard size SKZOO plushie.",
+    "category": "Accessories",
+    "img": "/pp.jpg",
+    "price": 32.0
+  },
+  {
+    "id": "10",
+    "name": "FoxI.Ny Plush",
+    "description": "Standard size SKZOO plushie.",
+    "category": "Accessories",
+    "img": "/foxy.jpg",
+    "price": 32.0
+  },
+  {
+    "id": "11",
+    "name": "5-STAR Album",
+    "description": "Third studio album.",
+    "category": "Albums",
+    "img": "/5stars.jpeg",
+    "price": 25.0
+  },
+  {
+    "id": "12",
+    "name": "MAXIDENT Album",
+    "description": "Limited edition mini album.",
+    "category": "Albums",
+    "img": "/max.jpg",
+    "price": 22.0
+  },
+  {
+    "id": "13",
+    "name": "ODDINARY Album",
+    "description": "Frankenstein version mini album.",
+    "category": "Albums",
+    "img": "/odd.jpg",
+    "price": 24.0
+  },
+  {
+    "id": "14",
+    "name": "NOEASY Album",
+    "description": "Second studio album.",
+    "category": "Albums",
+    "img": "/no.jpg",
+    "price": 26.0
+  },
+  {
+    "id": "15",
+    "name": "GO LIVE Album",
+    "description": "First studio album.",
+    "category": "Albums",
+    "img": "/go.jpg",
+    "price": 24.0
+  },
+  {
+    "id": "16",
+    "name": "Tour Hoodie (Black)",
+    "description": "Official Maniac Tour hoodie.",
+    "category": "Apparel",
+    "img": "/hoo.jpg",
+    "price": 65.0
+  },
+  {
+    "id": "17",
+    "name": "5-STAR T-Shirt",
+    "description": "Cotton t-shirt size L.",
+    "category": "Apparel",
+    "img": "/shirt.jpg",
+    "price": 35.0
+  },
+  {
+    "id": "18",
+    "name": "SKZ Cap",
+    "description": "Embroidered adjustable cap.",
+    "category": "Apparel",
+    "img": "/cap.jpg",
+    "price": 28.0
+  },
+  {
+    "id": "19",
+    "name": "Photocard Binder",
+    "description": "Binder for 120 photocards.",
+    "category": "Accessories",
+    "img": "/binder.jpg",
+    "price": 20.0
+  },
+  {
+    "id": "20",
+    "name": "Acrylic Keychain",
+    "description": "Official logo keychain.",
+    "category": "Accessories",
+    "img": "/key.jpg",
+    "price": 12.0
+  }
+]
