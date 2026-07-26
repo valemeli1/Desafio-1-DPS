@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { usestore } from '@/store/cartstore';
 import Link from 'next/link';
 import { toast } from 'sonner';
@@ -14,6 +15,7 @@ export default function CartPage() {
     const { cart, ucart, rcart, clear, saveinvo } = usestore();
     const [activeInvoice, setActiveInvoice] = useState<invoice | null>(null);
     const [showPayment, setpayment] = useState(false);
+    const router = useRouter();
 
     const total = cart.reduce((acc, item) => acc + item.price * item.quant, 0);
 
@@ -22,6 +24,15 @@ export default function CartPage() {
             toast.error('Tu carrito está vacío');
             return;
         }
+
+        // Solo los usuarios logueados pueden comprar.
+        const user = getuser();
+        if (!user) {
+            toast.error('Debes iniciar sesión para poder comprar');
+            router.push('/login');
+            return;
+        }
+
         setpayment(true);
     };
 

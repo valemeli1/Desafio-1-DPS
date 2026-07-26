@@ -47,7 +47,9 @@ function generateInvoicePdf(inv: invoice) {
         doc.setTextColor(199, 21, 133);
         doc.text(`Total: $${inv.total.toFixed(2)}`, 140, y);
 
-        doc.save(`${inv.id}.pdf`);
+        // Devolvemos el doc en vez de guardarlo aqui, asi afuera podemos
+        // tanto descargarlo como sacarle el base64 para mandarlo por correo.
+        return doc;
     });
 }
 
@@ -69,19 +71,41 @@ export default function InvoiceModal({
             return;
         }
 
-        // 1) Generación real del PDF (se descarga en el navegador).
-        // 2) El envío por correo se simula, ya que no usamos un backend/API.
-        const process = generateInvoicePdf(inv).then(
-            () => new Promise((resolve) => setTimeout(resolve, 1500))
-        );
+        // 1) Generamos el PDF real con jsPDF.
+        // 2) Lo descargamos en este dispositivo.
+        // 3) Sacamos el PDF en base64 y lo mandamos a nuestra propia ruta
+        //    /api/send-invoice, que usa Nodemailer para enviarlo de verdad.
+        const process = generateInvoicePdf(inv).then(async (doc) => {
+            doc.save(`${inv.id}.pdf`);
+
+            const pdfBase64 = doc.output('datauristring').split(',')[1];
+
+            const res = await fetch('/api/send-invoice', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    to: email,
+                    invoiceId: inv.id,
+                    date: inv.date,
+                    items: inv.items,
+                    total: inv.total,
+                    pdfBase64,
+                }),
+            });
+
+            const data = await res.json();
+            if (!data.ok) {
+                throw new Error(data.message);
+            }
+        });
 
         toast.promise(process, {
             loading: `Generando factura PDF y enviando a ${email}...`,
             success: () => {
                 setSent(true);
-                return `Factura ${inv.id} generada en PDF y enviada a ${email}`;
+                return `Factura ${inv.id} enviada a ${email}`;
             },
-            error: 'No se pudo generar la factura',
+            error: (err) => (err instanceof Error ? err.message : 'No se pudo enviar la factura'),
         });
     };
 
@@ -137,7 +161,7 @@ export default function InvoiceModal({
                             </button>
                         </div>
                         <p className="text-xs text-[#8b5a6b] mt-2 leading-relaxed">
-                            Se descargará un PDF real de tu factura en este dispositivo; el envío por correo es simulado.
+                            Se descargará un PDF de tu factura en este dispositivo y también se enviará una copia real a tu correo.
                         </p>
                     </div>
 
