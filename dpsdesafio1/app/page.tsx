@@ -25,9 +25,9 @@ export default function Home() {
 
   const cat = ['all', ...Array.from(new Set(products.map(p => p.category)))];
 
-  const filterp = sCat === 'all' 
-    ? (products as product[]) 
-    : (products as product[]).filter(p => p.category === sCat);
+ const filterp = sCat === 'all' 
+  ? (products as unknown as product[]) 
+  : (products as unknown as product[]).filter(p => p.category === sCat);
 
   if (checkingAuth) {
     return (
