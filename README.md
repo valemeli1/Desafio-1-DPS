@@ -2,6 +2,8 @@
 
 Tienda en línea hecha con Next.js. Los usuarios pueden ver un catálogo de productos, agregarlos al carrito, iniciar sesión, pagar y recibir su factura en PDF por correo real.
 
+**demo en vivo:** [https://desafio-1-dps-weld.vercel.app]
+
 ## Funcionalidades
 
 - Catálogo de productos filtrable por categoría.
