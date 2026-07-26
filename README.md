@@ -3,6 +3,7 @@
 Tienda en línea hecha con Next.js. Los usuarios pueden ver un catálogo de productos, agregarlos al carrito, iniciar sesión, pagar y recibir su factura en PDF por correo real.
 
 **demo en vivo:** [https://desafio-1-dps-weld.vercel.app]
+#LINK DE CARPETA DRIVE CON EL VIDEO:# [https://drive.google.com/drive/folders/1re-uaGywEdQX-0Evtz7EpOwBPxlyWDl-?usp=sharing]
 
 ## Funcionalidades
 
